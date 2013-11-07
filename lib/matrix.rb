@@ -34,6 +34,24 @@
                         @matriz[filas][columnas]
 		  end
 	  end      
+    def *(other)
+	resultado = Matriz.new(@filas, @columnas)
+	
+	for h in (0...@filas)
+	  for l in (0...@filas)
+	    resultado[h][l]=0
+	  end
+	end
+	 
+    for i in (0...3)
+      for j in (0...3)
+	for k in (0...3)
+	  resultado[i][j] += self[i][k]*other[k][j]   
+	  end
+	end
+      end
+      return resultado
+    end
     
     def +(other)
   
