@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'matrix.rb'
 
   describe Matriz do
