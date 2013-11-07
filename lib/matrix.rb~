@@ -42,7 +42,7 @@
 	    resultado[h][l]=0
 	  end
 	end
-	
+	 
     for i in (0...3)
       for j in (0...3)
 	for k in (0...3)

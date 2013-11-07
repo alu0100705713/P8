@@ -7,7 +7,7 @@ require 'matrix.rb'
 	    @p3 = @p1 + @p2
 	    @p4 = @p1 - @p2
 	    @p5 = @p1 * @p2
-	    @elem = @p1[2][2]
+	    @elem = (@p1[2][2]).to_i
 	end
 
       describe "Creación" do
@@ -60,7 +60,7 @@ require 'matrix.rb'
 	  end	  
 	end
 	
-	it "La multiplicación da los enteros correctos"
+	it "La multiplicación da los enteros correctos" do
 	  for i in 0...3
 	    for j in 0...3
 	      @p5[i][j].is_a? Integer
@@ -68,8 +68,5 @@ require 'matrix.rb'
 	    end
 	  end	
 	end 
-	
       end
-
-	  
       end

@@ -38,7 +38,7 @@
 	resultado = Matriz.new(@filas, @columnas)
 	
 	for h in (0...@filas)
-	  for l in (0...@filas)
+	  for l in (0...@columnas)
 	    resultado[h][l]=0
 	  end
 	end
