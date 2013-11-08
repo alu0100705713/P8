@@ -8,7 +8,7 @@
     def initialize(filas, columnas)
       @filas = filas
       @columnas = columnas
-      @matriz = Array.new(filas){ Array.new(columnas, rand(10)) }      
+      @matriz = Array.new(filas){ Array.new(columnas) }      
     end
 
     def to_s
@@ -34,24 +34,6 @@
                         @matriz[filas][columnas]
 		  end
 	  end      
-    def *(other)
-	resultado = Matriz.new(@filas, @columnas)
-	
-	for h in (0...@filas)
-	  for l in (0...@columnas)
-	    resultado[h][l]=0
-	  end
-	end
-	 
-    for i in (0...3)
-      for j in (0...3)
-	for k in (0...3)
-	  resultado[i][j] += self[i][k]*other[k][j]   
-	  end
-	end
-      end
-      return resultado
-    end
     
     def +(other)
   
@@ -83,4 +65,28 @@
       return resultado
     end
 
+    def *(other)
+        resultado = Matriz.new(2, 2)
+	
+	for i in (0...2)
+	  for j in (0...2)
+	      resultado[i][j] = (self[i][j])*(other[i][j])
+	    for k in (1...2)
+	      resultado[i][j] = resultado[i][j] + (self[i][k])*(other[k][j])
+	    end
+	  end
+	end
+      return resultado
+    end
+	
+    def ==(other)
+      for i in 0...@filas
+	for j in 0...@columnas    
+	  if(self[i][j] != other[i][j])
+	    return false
+	  end
+	    end
+	  end
+	  return true
+  end
   end
